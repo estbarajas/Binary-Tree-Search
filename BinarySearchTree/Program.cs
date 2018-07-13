@@ -10,13 +10,18 @@ namespace BinarySearchTree
     {
         static void Main(string[] args)
         {
-            //Tree tree = new Tree();
-            //tree.Add(1);
-            //tree.Add(2);
-            //tree.Add(3);
-            //tree.Add(4);
+            Tree tree = new Tree();
+            tree.AddRec(10);
+            tree.AddRec(8);
+            tree.AddRec(14);
 
-            //Console.ReadLine();
+            string treeString = "";
+            tree.PrintInOrder(null, ref treeString);           
+            Console.WriteLine(treeString);
+
+            tree.search(null, 14);
+
+            Console.ReadLine();
         }
     }
 }
