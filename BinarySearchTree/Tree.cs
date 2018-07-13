@@ -64,5 +64,27 @@ namespace BinarySearchTree
                 PrintInOrder(N.right, ref s);
             }
         }
+
+        public bool search(Node N, int key)
+        {
+            if (N == null)
+            {
+                N = Top;
+            }
+            if (N.value == key)
+            {
+                Console.WriteLine("Found: " + key);
+                return true;
+            }
+            if (key < N.value)
+            {
+                return search(N.left,key);
+            }
+            else
+            {
+                return search(N.right, key);
+            }
+
+        }
     }
 }
