@@ -8,62 +8,26 @@ namespace BinarySearchTree
 {
     class Tree
     {
-        Node root;
+        Node Top;
+
         public Tree()
         {
-            root = null;
+            Top = null;
         }
 
         public Tree(int initial)
         {
-            root = new Node(initial);
+            Top = new Node(initial);
         }
 
-        public void Search()
+        public void AddRec(int value)
         {
-
+            AddR(ref Top, value);
         }
 
-        public void Add(int value)
+        private void AddR(ref Node N, int value)
         {
-            if (root == null)
-            {
-                Node newNode = new Node(value);
-                root = newNode;
-                return;
-            }
-            Node currentNode = root;
-            bool added = false;
-            do
-            {//traverse tree
-                if (value < currentNode.value)
-                {
-                    if (currentNode.left == null)
-                    {
-                        Node newNode = new Node(value);
-                        currentNode.left = newNode;
-                        added = true;
-                    }
-                    else
-                    {
-                        currentNode = currentNode.left;
-                    }                   
-                }
-                if (value >= currentNode.value)
-                {
-                    if (currentNode.right == null)
-                    {
-                        Node newNode = new Node(value);
-                        currentNode.right = newNode;
-                        added = true;
-                    }
-                    else
-                    {
-                        currentNode = currentNode.right;
-                    }
-                }
 
-            } while (!added);
         }
 
         public void Print()
